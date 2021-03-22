@@ -1,5 +1,5 @@
 /*!
- * UAParser.js v0.7.24
+ * UAParser.js v0.7.24-kueez
  * Lightweight JavaScript-based User-Agent string parser
  * https://github.com/faisalman/ua-parser-js
  *
@@ -16,7 +16,7 @@
     /////////////
 
 
-    var LIBVERSION  = '0.7.24',
+    var LIBVERSION  = '0.7.24-kueez',
         EMPTY       = '',
         UNKNOWN     = '?',
         FUNC_TYPE   = 'function',
@@ -303,7 +303,7 @@
 
             /;fbav\/([\w\.]+);/i                                                // Facebook App for iOS & Android with version
             ], [VERSION, [NAME, 'Facebook']], [
-            
+
             /FBAN\/FBIOS|FB_IAB\/FB4A/i                                         // Facebook App for iOS & Android without version
             ], [[NAME, 'Facebook']], [
 
@@ -441,6 +441,10 @@
             /\((ip(?:hone|od)[\s\w]*);/i                                        // iPod/iPhone
             ], [MODEL, [VENDOR, 'Apple'], [TYPE, MOBILE]], [
 
+                                                                                // Asus Tablets
+              /droid.+(transfo[prime\s]{4,10}\s\w+|eeepc|slider\s\w+|nexus 7|padfone|p00c|(?:ASUS_)?p00j)/i
+            ], [MODEL, [VENDOR, 'Asus'], [TYPE, TABLET]], [
+
             /(blackberry)[\s-]?(\w+)/i,                                         // BlackBerry
             /(blackberry|benq|palm(?=\-)|sonyericsson|acer|asus|dell|meizu|motorola|polytron)[\s_-]?([\w-]*)/i,
                                                                                 // BenQ/Palm/Sony-Ericsson/Acer/Asus/Dell/Meizu/Motorola/Polytron
@@ -449,9 +453,7 @@
             ], [VENDOR, MODEL, [TYPE, MOBILE]], [
             /\(bb10;\s(\w+)/i                                                   // BlackBerry 10
             ], [MODEL, [VENDOR, 'BlackBerry'], [TYPE, MOBILE]], [
-                                                                                // Asus Tablets
-            /droid.+(transfo[prime\s]{4,10}\s\w+|eeepc|slider\s\w+|nexus 7|padfone|p00c)/i
-            ], [MODEL, [VENDOR, 'Asus'], [TYPE, TABLET]], [
+
 
             /sony\stablet\s[ps]\sbuild\//i,                                    // Sony
             /(?:sony)?sgp\w+(?:\sbuild\/|\))/i
@@ -481,14 +483,15 @@
             /(nexus\s9)/i                                                       // HTC Nexus 9
             ], [MODEL, [VENDOR, 'HTC'], [TYPE, TABLET]], [
 
+            /droid.+(bah2?-a?[lw]\d{2})/i,                                       // Huawei MediaPad M
+            /droid.+(ags2?-a?[lw]\d{2})/i                                        // Huawei MediaPad T
+            ], [MODEL, [VENDOR, 'Huawei'], [TYPE, TABLET]], [
+
             /d\/huawei([\w\s-]+)[;\)]/i,                                        // Huawei
             /droid.+\s(nexus\s6p|vog-[at]?l\d\d|ane-[at]?l[x\d]\d|eml-a?l\d\da?|lya-[at]?l\d[\dc]|clt-a?l\d\di?)/i,
             /droid.+\s((?:A(?:GS2?|KA|LP|N[AE]|QM|RE|SK|TH)|B(?:A(?:C|H2)|G2|KL|LA|MH|Z[AKT])|C(?:AZ|DY|LT|OL|[MOR]R)|DUK|E(?:BG|DI|L[ES]|ML|V[AR])|FRD|G(?:LK|RA)|H(?:D[LN]|MA|LK|RY|WI)|INE|J(?:DN2|MM|NY|SN)|K(?:NT|OB|SA)|L(?:IO|LD|ON|[RY]A)|M(?:AR|ED|[HL]A|ON|RX|T7)|N(?:EO|TS|XT)|OXF|P(?:AR|CT|IC|LK|RA)|R(?:IO|VL)|S(?:C[ML]|EA|HT|PN|TF)|T(?:A[HS]|NY)|V(?:[CI]E|KY|OG|RD)|W(?:AS|LZ)|Y(?:635|AL))-[ATU][LN][01259][019])[;\)\s]/i
 
             ], [MODEL, [VENDOR, 'Huawei'], [TYPE, MOBILE]], [
-
-            /droid.+(bah2?-a?[lw]\d{2})/i                                       // Huawei MediaPad
-            ], [MODEL, [VENDOR, 'Huawei'], [TYPE, TABLET]], [
 
             /(microsoft);\s(lumia[\s\w]+)/i                                     // Microsoft Lumia
             ], [VENDOR, MODEL, [TYPE, MOBILE]], [
@@ -518,7 +521,8 @@
             ], [MODEL, [VENDOR, 'Sharp'], [TYPE, SMARTTV]], [
 
             /droid.+((sch-i[89]0\d|shw-m380s|SM-P605|SM-P610|SM-P587|gt-p\d{4}|gt-n\d+|sgh-t8[56]9|nexus 10))/i,
-            /((SM-T\w+))/i
+            /((SM-T\w+))/i,
+            /((SM-P\w+))/i,
             ], [[VENDOR, 'Samsung'], MODEL, [TYPE, TABLET]], [                  // Samsung
             /smart-tv.+(samsung)/i
             ], [VENDOR, [TYPE, SMARTTV], MODEL], [
@@ -579,7 +583,7 @@
 
             /droid.+;\s(\w+)\s+build\/hm\1/i,                                   // Xiaomi Hongmi 'numeric' models
             /droid.+(hm[\s\-_]?note?[\s_]?(?:\d\w)?)\sbuild/i,                  // Xiaomi Hongmi
-            /droid.+(redmi[\s\-_]?(?:note|k)?(?:[\s_]?[\w\s]+))(?:\sbuild|\))/i,      
+            /droid.+(redmi[\s\-_]?(?:note|k)?(?:[\s_]?[\w\s]+))(?:\sbuild|\))/i,
                                                                                 // Xiaomi Redmi
             /droid.+(mi[\s\-_]?(?:a\d|one|one[\s_]plus|note lte)?[\s_]?(?:\d?\w?)[\s_]?(?:plus)?)\sbuild/i
                                                                                 // Xiaomi Mi
