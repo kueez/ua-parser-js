@@ -1364,6 +1364,15 @@
         }
     },
     {
+        "desc": "Amazon Kindle Fire Tablet",
+        "ua": "Mozilla/5.0 (Linux; Android 9; KFMAWI Build/PS7312; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/70.0.3538.110 Safari/537.36 [FB_IAB/FB4A;FBAV/270.0.0.57.127;]",
+        "expect": {
+            "vendor": "Amazon",
+            "model": "KFMAWI",
+            "type": "tablet"
+        }
+    },
+    {
         "desc": "Amazon Fire TV",
         "ua": "Mozilla/5.0 (Linux; Android 4.2.2; AFTB Build/JDQ39) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.173 Mobile Safari/537.22",
         "expect": {
@@ -1414,6 +1423,15 @@
         "expect": {
             "vendor": "Huawei",
             "model": "BAH2-W19",
+            "type": "tablet"
+        }
+    },
+    {
+        "desc": "HUAWEI MediaPad M5",
+        "ua": "Mozilla/5.0 (Linux; Android 9; SHT-AL09 Build/HUAWEISHT-AL09; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.90 Mobile Safari/537.36 [FB_IAB/FB4A;FBAV/309.0.0.47.119;]",
+        "expect": {
+            "vendor": "Huawei",
+            "model": "SHT-AL09",
             "type": "tablet"
         }
     },

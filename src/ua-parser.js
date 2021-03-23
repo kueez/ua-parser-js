@@ -431,6 +431,7 @@
             ], [VENDOR, MODEL, [TYPE, TABLET]], [
 
             /(alexa)webm/i,
+            /(kfmawi)(\sbuild\/|\))/i,
             /(kf[A-z]+)(\sbuild\/|\)).+silk\//i                                 // Kindle Fire HD
             ], [MODEL, [VENDOR, 'Amazon'], [TYPE, TABLET]], [
             /(sd|kf)[0349hijorstuw]+(\sbuild\/|\)).+silk\//i                    // Fire Phone
@@ -483,7 +484,8 @@
             /(nexus\s9)/i                                                       // HTC Nexus 9
             ], [MODEL, [VENDOR, 'HTC'], [TYPE, TABLET]], [
 
-            /droid.+(bah2?-a?[lw]\d{2})/i,                                       // Huawei MediaPad M
+            /droid.+(bah2?-a?[lw]\d{2})/i,                                       // Huawei MediaPad M Lite
+            /droid.+(sht?-a?[lw]\d{2})/i,                                        // Huawei MediaPad M
             /droid.+(ags2?-a?[lw]\d{2})/i                                        // Huawei MediaPad T
             ], [MODEL, [VENDOR, 'Huawei'], [TYPE, TABLET]], [
 
