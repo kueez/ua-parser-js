@@ -397,7 +397,7 @@
             ], [[MODEL, 'iPad'], [VENDOR, 'Apple'], [TYPE, TABLET]], [
 
             // Huawei
-            /\b(bah2?-a?[lw]\d{2})/i,                                           // Huawei M Lite
+            /\b(bah(2|3)?-a?[lw]\d{2})/i,                                       // Huawei M Lite
             /\b(sht?-a?[lw]\d{2})/i,                                            // Huawei M
             /\b(ags(2|3)?-a?[lw]\d{2})/i,                                       // Huawei T
             /\b(agr-a?[lw]\d{2})/i                                              // Huawei T s

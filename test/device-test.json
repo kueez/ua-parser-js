@@ -1931,6 +1931,15 @@
         }
     },
     {
+        "desc": "HUAWEI MediaPad 10.4",
+        "ua": "Mozilla/5.0 (Linux; Android 10; BAH3-W09 Build/HUAWEIBAH3-W09; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.108 Safari/537.36",
+        "expect": {
+            "vendor": "Huawei",
+            "model": "BAH3-W09",
+            "type": "tablet"
+        }
+    },
+    {
         "desc": "HUAWEI MediaPad M5",
         "ua": "Mozilla/5.0 (Linux; Android 9; SHT-AL09 Build/HUAWEISHT-AL09; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/89.0.4389.90 Mobile Safari/537.36",
         "expect": {
